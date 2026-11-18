@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase | Product Listing</title>
+  <!-- Connect the external CSS file for page styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header: brand, search bar and cart summary -->
+  <header class="site-header">
+    <a class="logo" href="#">ShopEase<span>.</span></a>
+
+    <form class="search-form" id="searchForm">
+      <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+      <button type="submit" aria-label="Search">Search</button>
+    </form>
+
+    <button class="cart-button" type="button" aria-label="Shopping cart">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="page-container">
+    <!-- Intro section -->
+    <section class="intro">
+      <div>
+        <p class="eyebrow">DISCOVER YOUR NEXT FAVOURITE</p>
+        <h1>Find something <span>you’ll love.</span></h1>
+        <p class="intro-copy">Explore our collection of everyday essentials and smart picks.</p>
+      </div>
+      <p class="result-count" id="resultCount">Showing all products</p>
+    </section>
+
+    <!-- Main listing layout: filters on the left, products on the right -->
+    <section class="listing-layout">
+      <aside class="filters">
+        <div class="filter-heading">
+          <h2>Filters</h2>
+          <button id="clearFilters" class="text-button" type="button">Clear all</button>
+        </div>
+
+        <!-- Category filter is populated from the product data in JavaScript -->
+        <div class="filter-group">
+          <h3>Category</h3>
+          <div id="categoryFilters" class="category-options"></div>
+        </div>
+
+        <!-- Sort products by price or rating -->
+        <div class="filter-group">
+          <h3>Sort by</h3>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to high</option>
+            <option value="price-high">Price: High to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </div>
+      </aside>
+
+      <div class="products-area">
+        <div class="products-toolbar">
+          <h2>Our Products</h2>
+          <span>Thoughtfully picked for you</span>
+        </div>
+
+        <!-- JavaScript inserts product cards inside this grid -->
+        <div class="product-grid" id="productGrid"></div>
+
+        <!-- This message is shown when filters return no matching products -->
+        <div class="empty-state hidden" id="emptyState">
+          <h3>No products found</h3>
+          <p>Try another search or clear your filters.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">© 2026 ShopEase. Demo product listing website.</footer>
+
+  <!-- Load JavaScript after the page content so the elements are available -->
+  <script src="script.js"></script>
+</body>
+</html>
